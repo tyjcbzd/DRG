@@ -1,0 +1,60 @@
+g_cfg:  
+  g_num_modes: 6  
+  g_obs_len: 20  
+  g_pred_len: 30  
+
+data_cfg:  
+  g_num_modes: ${g_cfg.g_num_modes}  
+  g_obs_len: ${g_cfg.g_obs_len}  
+  g_pred_len: ${g_cfg.g_pred_len}  
+
+net_cfg:   
+  init_weights: false  
+  in_actor: 3 
+  d_actor: 128  
+  n_fpn_scale: 3  
+  in_lane: 10  
+  d_lane: 128  
+  d_rpe_in: 5  
+  d_rpe: 128  
+  d_embed: 128  
+  n_scene_layer: 4  
+  n_scene_head: 8  
+  dropout: 0.1  
+  update_edge: true  
+  param_out: bezier  
+  param_order: 5  
+  g_num_modes: ${g_cfg.g_num_modes}  
+  g_obs_len: ${g_cfg.g_obs_len}  
+  g_pred_len: ${g_cfg.g_pred_len}  
+
+
+loss_cfg:   
+  cls_coef: 0.1  
+  reg_coef: 0.9  
+  mgn: 0.2  
+  cls_th: 2.0  
+  cls_ignore: 0.2  
+  g_num_modes: ${g_cfg.g_num_modes}  
+  g_obs_len: ${g_cfg.g_obs_len}  
+  g_pred_len: ${g_cfg.g_pred_len}  
+
+opt_cfg:  
+  opt: adam  
+  weight_decay: 0.0  
+  lr_scale_func: none  
+  scheduler: polyline  
+  init_lr: 1.0e-4  
+  milestones: [0, 5, 35, 40]  
+  lr_values: [1.0e-4, 1.0e-3, 1.0e-3, 1.0e-4]
+  gradient_clip_val: 1.0  
+  g_num_modes: ${g_cfg.g_num_modes}  
+  g_obs_len: ${g_cfg.g_obs_len}  
+  g_pred_len: ${g_cfg.g_pred_len}  
+
+eval_cfg:  
+  data_ver: av1  
+  miss_thres: 2.0  
+  g_num_modes: ${g_cfg.g_num_modes}  
+  g_obs_len: ${g_cfg.g_obs_len}  
+  g_pred_len: ${g_cfg.g_pred_len}
