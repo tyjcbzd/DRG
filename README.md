@@ -1,4 +1,4 @@
-# Dynamic Relational Graph Modeling for Multi-Agent Trajectory Prediction
+# :dragon: DRG: Dynamic Relational Graph Modeling for Multi-Agent Trajectory Prediction
 This is the official code implementation for manuscript "Dynamic Relational Graph Modeling for Multi-Agent Trajectory Prediction".
 
 ## Visualization
