@@ -1,8 +1,11 @@
-# DRG
-Dynamic Relational Graph Modeling for Multi-Agent Trajectory Prediction
+# Dynamic Relational Graph Modeling for Multi-Agent Trajectory Prediction
+This is the official code implementation for manuscript "Dynamic Relational Graph Modeling for Multi-Agent Trajectory Prediction".
+
+## Visualization
+![Image 1](src/visualization.png)
 
 
-## Gettting Started
+## Getting Started
 
 ### Install dependencies
 - Create a new conda virtual env
@@ -22,16 +25,12 @@ conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit
   ```
   pip install -r requirements.txt 
   ```
+### Data preparation
+- Refer to [Simpl](https://github.com/HKUST-Aerial-Robotics/SIMPL)
 
 ### Train from scratch
-
-- Preprocess full Argoverse 1 motion forecasting dataset using the script:
-
-
-- Launch training using the script:
-
-
-- For model evaluation, please refer to the following scripts:
+Once you prepare the dataset.
+Run `train_ddp.py`
 
 ## Acknowledgment
 We would like to express sincere thanks to the authors of the following packages and tools:
